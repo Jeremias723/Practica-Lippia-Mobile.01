@@ -1,5 +1,4 @@
 package com.crowdar.examples.steps;
-
 import com.crowdar.core.PageSteps;
 import com.crowdar.examples.services.ClockyHomeService;
 import io.cucumber.java.en.And;
@@ -19,7 +18,7 @@ public class ClockyHomeSteps extends PageSteps {
         ClockyHomeService.enterToTimeTracker();
     }
 
-    @Then("the user will be able to see their time entry with their project name: (.*)")
+    @Then("the app shows the project name created: (.*)")
     public void theUserWillBeAbleToSeeTheirTimeEntry(String project) {
         ClockyHomeService.verifyTimeEntry(project);
     }
@@ -32,5 +31,10 @@ public class ClockyHomeSteps extends PageSteps {
     @Then("the user activates the dark mode of the application")
     public void theUserActivatesTheDarkModeOfTheApplication() {
         ClockyHomeService.enableDarkMode();
+    }
+
+    @Then("the dark mode is displayed")
+    public void theDarkModeIsDisplayed() {
+        ClockyHomeService.verifyTheme();
     }
 }
