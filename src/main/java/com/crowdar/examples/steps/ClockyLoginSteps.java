@@ -4,24 +4,23 @@ import com.crowdar.core.PageSteps;
 import com.crowdar.examples.services.ClockyLoginService;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class ClockyLoginSteps extends PageSteps {
 
-    @Given("that the application loads correctly")
-    public void thatTheApplicationLoadsCorrectly() {
+    @Given("the user is in the login page")
+    public void theUserIsInTheLoginPage() {
         ClockyLoginService.checkLoad();
     }
 
 
-    @When("the user enter his (.*) and (.*)")
+    @When("the user complete with (.*) and (.*)")
     public void theUserEnterHisEmailAndPassword(String email,String password) {
         ClockyLoginService.insertData(email,password);
     }
 
-    @And("do click on 'Log in' button")
-    public void doClickOnLogInButton() {
+    @And("the user click in the 'Login' button")
+    public void theUserClickInTheLoginButton() {
         ClockyLoginService.clickLogInButton();
     }
 
